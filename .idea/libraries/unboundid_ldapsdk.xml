@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="unboundid-ldapsdk">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/unboundid-ldapsdk-4.0.11/unboundid-ldapsdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
