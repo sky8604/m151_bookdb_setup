@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="BookDB" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-api:0.10.5" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-impl:0.10.5" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-jackson:0.10.5" />
+        </element>
       </element>
     </root>
   </artifact>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='author' content='Marcel Suter'/>
+  <meta name='copyright' content='Marcel Suter - BZZ'/>
+  <meta name='project' content='BookDB'/>
+  <meta name='description' content='bookshelf books list table'/>
+  <title>Bücherliste</title>
+  <link rel='stylesheet' href='./css/bootstrap.min.css'/>
+</head>
+<body>
+<div class='container'>
+  <h3>Bücherliste</h3>
+  <div id='nav'>
+
+
+    <button type='button' id='logoff'>Abmelden</button>
+    <span id='userRole'></span>
+    <span id='message' style='color: red;'></span>
+  </div>
+  <form id='shelfForm'>
+    <table class='table table-striped' id='bookshelf'>
+      <thead>
+      <tr>
+        <th scope='col'>Titel</th>
+        <th scope='col'>Autor</th>
+        <th scope='col'>Verlag</th>
+        <th scope='col'>Preis</th>
+        <th scope='col'>ISBN</th>
+        <th scope='col'>&nbsp;</th>
+        <th scope='col'>&nbsp;</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div class='row'>
+      <a href='./bookedit.html'>Neues Buch</a>
+    </div>
+
+  </form>
+</div>
+<script src='./js/jquery-3.4.1.min.js'></script>
+<script src='./js/bootstrap.min.js'></script>
+<script src='./js/bookshelf.js'></script>
+<script src='./js/util.js'></script>
+<script src='./js/login.js'></script>
+<script src='./js/js.cookie.js'></script>
+</body>
+</html>
