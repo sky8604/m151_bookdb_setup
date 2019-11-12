@@ -1,6 +1,7 @@
 package ch.bzz.book.service;
 
 
+import ch.bzz.book.data.BookDao;
 import ch.bzz.book.model.Book;
 import ch.bzz.book.util.TokenHandler;
 
@@ -23,6 +24,29 @@ import java.util.Map;
  */
 @Path("bookshelf")
 public class BookService {
+    /**
+     * produces the number of books
+     *
+     * @param token encrypted authorization token
+     * @return Response
+     */
+    @GET
+    @Path("count")
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response countBooks(
+            @CookieParam("jwtoken") String token
+    ) {
+
+        int httpStatus = 200;
+        Integer bookCount = new BookDao().count();
+
+        return Response
+                .status(httpStatus)
+                .entity("{\"bookCount\":" + bookCount + "}")
+                .build();
+    }
+
     /**
      * produces a list of all books
      *

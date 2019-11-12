@@ -14,6 +14,7 @@
 $(document).ready(function () {
     showMessage("info", "Bücher werden geladen");
     loadBooks();
+    countBooks();
 
     /**
      * listener for buttons within shelfForm
@@ -47,6 +48,27 @@ function loadBooks() {
 }
 
 /**
+ * gets the bookcount from the webservice
+ *
+ */
+function countBooks() {
+    $
+        .ajax({
+            url: "./resource/bookshelf/count",
+            dataType: "json",
+            type: "GET"
+        })
+        .done(showCount)
+        .fail(function (xhr) {
+            if (xhr.status == 403) {
+                location.href = "./login.html";
+            } else {
+                showMessage("error", "Fehler beim Lesen der Bücher");
+            }
+        })
+}
+
+/**
  * shows all books as a table
  *
  * @param bookData all books as an array
@@ -66,6 +88,14 @@ function showBooks(bookData) {
     });
     $("#bookshelf > tbody").html(tableData);
     showMessage("empty", " ");
+}
+
+/**
+ * shows the book count
+ * @param data
+ */
+function showCount(data) {
+    $('#bookCount').text(data.bookCount);
 }
 
 /**
